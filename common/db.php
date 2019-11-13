@@ -55,15 +55,8 @@ class Db
 	protected static function getByFieldFromTable($table, $field_name, $field_value)
     {
         $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = '{$field_value}'";
-        echo $sql;
         $result = self::$connection->query($sql);
-        echo '<pre>';
-        print_r($result);
-        echo '</pre>';
         $row = mysqli_fetch_row($result);
-        echo '<pre>';
-        print_r($row);
-        echo '</pre>';
         return  $row;
     }
 
@@ -126,9 +119,9 @@ class Db
             }
         }
         $sql .= $paramsStr . " values " . $valuesStr;
-        //echo $sql;
+        echo $sql;
         $result = self::$connection->query($sql);
-        //print_r($result);
+        print_r($result);
     }
 
     protected static function insert($data, $table)

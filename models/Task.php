@@ -52,6 +52,6 @@ class Task extends Db
         print_r($task);
         echo '</pre>';
         if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
-        parent::updateToTable($this->tableName, $values, 'id', $newTask['id']);
+        parent::updateToTable($this->tableName, $newTask, 'id', $newTask['id']);
     }
 }

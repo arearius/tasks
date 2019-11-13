@@ -98,8 +98,8 @@
 					<textarea class="form-control" id="inputText" name="text" rows="3"><?php echo $task[4]; ?></textarea>
 				</div>
 				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="TaskDone">
-					<label class="form-check-label" for="TaskDone" name='status'>Задача выполнена</label>
+					<input type="checkbox" class="form-check-input" id="TaskDone" name='status'>
+					<label class="form-check-label" for="TaskDone" >Задача выполнена</label>
 				</div>
 				<button type="submit" class="btn btn-primary">Обновить задачу</button>
 			</form>

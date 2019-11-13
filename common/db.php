@@ -55,7 +55,8 @@ class Db
 
     protected static function getSomeRowsFromTable($table, $count)
     {
-	$sql = "SELECT * FROM $table LIMIT $count";
+    $sql = "SELECT * FROM $table LIMIT $count";
+    echo $sql;
 	$result = self::$connection->query($sql);
 	$rows = [];
 	while ($row = mysqli_fetch_row($result)){

@@ -54,11 +54,13 @@ class TasksController
         echo '<pre>';
         print_r($_POST);
         echo '</pre>';
+        if ($_POST['status'] == 'on') $status=1;
+        else $status=0;
         $newTask = [
             'id' => $_GET['id'],
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
-            'status' => $_POST['status'],
+            'status' => $status,
             'text' => $_POST['text']
         ];
         $task = $this->task->updateTask($newTask);

@@ -38,9 +38,6 @@ class Task extends Db
     }
 
     public function updateTask(){
-	echo '<pre>';
-	print_r($_POST);
-	echo '</pre>';
 	$sql = "INSERT INTO 'tasks' (`user_name`, `mail`, `text`) values ('{}')";
 	echo $sql;
     }

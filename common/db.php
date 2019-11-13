@@ -54,7 +54,7 @@ class Db
 	
 	protected static function getByFieldFromTable($table, $field_name, $field_value)
     {
-        $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = `{$field_value}`";
+        $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = '{$field_value}'";
         echo $sql;
         $result = self::$connection->query($sql);
         echo '<pre>';

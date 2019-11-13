@@ -51,6 +51,7 @@ class Task extends Db
             parent::updateToTable(config::$db['data_table'], $newTask, 'id', $newTask['id']);
         } else {
             echo 'Необходимо авторизоваться для обновления задач!';
+            sleep(5);
             header("Location: http://31.184.254.242/tasks/");
             exit();
         }

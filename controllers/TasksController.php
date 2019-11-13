@@ -31,9 +31,12 @@ class TasksController
     public function signUp(){
         $page = 0;
         $sort = 0;
-        Auth::signUp();
-        $tasks = $this->task->getTasks($page, $sort);
-        $this->view->show('TasksList', $tasks);
+        if (Auth::signUp()){
+            $tasks = $this->task->getTasks($page, $sort);
+            $this->view->show('TasksList', $tasks);
+        } else {
+            $this->view->show('AuthError');
+        }
     }
 
     public function signOut(){
@@ -50,10 +53,6 @@ class TasksController
             'mail' => Helpers::getPost('mail'),
             'text' => Helpers::getPost('text')
         ];
-        echo 'add task;';
-        echo '<pre>';
-        print_r($task);
-        echo '</pre>';
 	    $this->task->addTask($task);
 	    $sort = 0;
 	    $page = 0;
@@ -62,20 +61,24 @@ class TasksController
     }
 
     public function updateTask(){
-        if ($_POST['status'] == 'on') $status=1;
-        else $status=0;
-        $newTask = [
-            'id' => $_GET['id'],
-            'user_name' => $_POST['user_name'],
-            'mail' => $_POST['mail'],
-            'status' => $status,
-            'text' => $_POST['text']
-        ];
-        $task = $this->task->updateTask($newTask);
-	    $sort = 0;
-	    $page = 0;
-	    $tasks = $this->task->getTasks($page, $sort);
-	    $this->view->show('TasksList', $tasks);
+        if (Auth::getAuth()) {
+            if ($_POST['status'] == 'on') $status=1;
+            else $status=0;
+            $newTask = [
+                'id' => $_GET['id'],
+                'user_name' => $_POST['user_name'],
+                'mail' => $_POST['mail'],
+                'status' => $status,
+                'text' => $_POST['text']
+            ];
+            $task = $this->task->updateTask($newTask);
+            $sort = 0;
+            $page = 0;
+            $tasks = $this->task->getTasks($page, $sort);
+            $this->view->show('TasksList', $tasks);
+        } else {
+            $this->view->show('UpdateErrorByAuth');
+        }
     }
 
 }

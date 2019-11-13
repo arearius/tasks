@@ -72,7 +72,7 @@ class Db
 
     protected static function getSomeRowsFromTableSort($table, $count, $sort)
     {
-        $sql = "SELECT * FROM $table LIMIT $count ORDER BY $sort";
+        $sql = "SELECT * FROM $table ORDER BY $sort ASC LIMIT $count ";
         echo $sql;
         $result = self::$connection->query($sql);
         $rows = [];

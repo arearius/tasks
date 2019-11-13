@@ -103,7 +103,7 @@ class Db
         $index = 0;
         $sql = "UPDATE `{$table}` SET ";
         foreach ($values as $param => $value){
-            $sql .= "`{$param}` = " . "'{$value}'"
+            $sql .= "`{$param}` = " . "'{$value}'";
             $index++;
             if ($index < count($values)) {
                 $sql .=", ";

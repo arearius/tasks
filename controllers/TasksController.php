@@ -38,10 +38,30 @@ class TasksController
     }
 
     public function addTask(){
-	    $this->task->addTask();
+        $task = [
+            'user_name' => $_POST['user_name'],
+            'mail' => $_POST['mail'],
+            'text' => $_POSTp['text']
+        ]
+	    $this->task->addTask($task);
 	    $sort = 0;
 	    $page = 0;
 	    $tasks = $this->task->getTasks($page, $sort);
 	    $this->view->show('TasksList', $tasks);
     }
+
+    public function updateTask(){
+        $newTask = [
+            'id' => $_POST['task_id'],
+            'user_name' => $_POST['user_name'],
+            'mail' => $_POST['mail'],
+            'text' => $_POSTp['text']
+        ]
+        $task = $this->task->updateTask($newTask);
+	    $sort = 0;
+	    $page = 0;
+	    $tasks = $this->task->getTasks($page, $sort);
+	    $this->view->show('TasksList', $tasks);
+    }
+
 }

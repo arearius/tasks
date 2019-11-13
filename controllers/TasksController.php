@@ -51,6 +51,9 @@ class TasksController
     }
 
     public function updateTask(){
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
         $newTask = [
             'id' => $_GET['id'],
             'user_name' => $_POST['user_name'],

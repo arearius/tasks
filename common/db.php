@@ -100,25 +100,19 @@ class Db
 
     protected static function updateToTable($table, $values, $field_name, $field_value)
     {
-
-        $sql = "INSERT INTO `{$table}` " ;
-        $valuesStr = "(";
-        $paramsStr = "(";
         $index = 0;
+        $sql = "UPDATE `{$table}` SET ";
         foreach ($values as $param => $value){
-            $valuesStr .= "'{$value}'";
-            $paramsStr .= "`{$param}`";
+            $sql .= "`{$param}` = " . "'{$value}'"
             $index++;
             if ($index < count($values)) {
                 $valuesStr .=", ";
                 $paramsStr .=", ";
             }
             else {
-                $valuesStr .=")";
-                $paramsStr .=")";
+                $sql .= " WHERE `{$field_name}`='{$field_value}'";
             }
         }
-        $sql .= $paramsStr . " values " . $valuesStr;
         echo $sql;
         $result = self::$connection->query($sql);
         print_r($result);

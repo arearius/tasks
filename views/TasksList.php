@@ -122,8 +122,8 @@
 				<div class="user_name"><?php echo $task['2']; ?></div>
 				<div class="user_email"><?php echo $task['3']; ?></div>
 				<div class="task_text"><?php echo $task['4']; ?></div>
-				<div class="task_complete"><?php echo $task['5']; ?></div>
-				<div class="task_modified"><?php echo $task['6']; ?></div>
+				<div class="task_complete"><?php if ($task['5']) echo "Задача выполнена"; ?></div>
+				<div class="task_modified"><?php if ($task['6']) echo "Задача изменена администратором"; ?></div>
 			</div>
 		</div>
 		<?php endforeach; ?>

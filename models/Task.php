@@ -27,7 +27,7 @@ class Task extends Db
 
     private function createFormTable($table){
         $fields = config::$tablesStructure[$table]['fields'];
-        $primaryKey = config::$tablesStructure[$table]['primaryKey'];;
+        $primaryKey = config::$tablesStructure[$table]['primaryKey'];
         parent::createTable($table, $fields, $primaryKey);
     }
 

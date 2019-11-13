@@ -37,7 +37,7 @@ class Config
 	'admin' => '123'
     ];
 
-    public static $staf[
+    public static $staf = [
 		'tasks_count_on_page' => 3
 	];
 }

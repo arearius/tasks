@@ -51,9 +51,6 @@ class TasksController
     }
 
     public function updateTask(){
-        echo '<pre>';
-        print_r($_POST);
-        echo '</pre>';
         if ($_POST['status'] == 'on') $status=1;
         else $status=0;
         $newTask = [

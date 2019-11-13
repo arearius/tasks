@@ -39,18 +39,10 @@ class Task extends Db
 
     public function addTask($newTask){
         parent::insertToTable($this->tableName, $values);
-	    echo $sql;
     }
 
     public function updateTask($newTask){
-        echo 'update task';
-        echo '<pre>';
-        print_r($newTask);
-        echo '</pre>';
         $task = parent::getByFieldFromTable($this->tableName, 'id', $newTask['id']);
-        echo '<pre>';
-        print_r($task);
-        echo '</pre>';
         if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
         parent::updateToTable($this->tableName, $newTask, 'id', $newTask['id']);
     }

@@ -30,7 +30,6 @@ class Db
         }
 
         $sql .= " PRIMARY KEY(`$primaryKey`))";
-	echo $sql;
         self::$connection->query($sql);
     }
 
@@ -63,7 +62,6 @@ class Db
     protected static function getSomeRowsFromTable($table, $count)
     {
         $sql = "SELECT * FROM $table LIMIT $count";
-        echo $sql;
         $result = self::$connection->query($sql);
         $rows = [];
         while ($row = mysqli_fetch_row($result)){
@@ -93,9 +91,7 @@ class Db
             }
         }
         $sql .= $paramsStr . " values " . $valuesStr;
-        //echo $sql;
         $result = self::$connection->query($sql);
-        //print_r($result);
     }
 
     protected static function updateToTable($table, $values, $field_name, $field_value)
@@ -112,9 +108,7 @@ class Db
                 $sql .= " WHERE `{$field_name}`='{$field_value}'";
             }
         }
-        echo $sql;
         $result = self::$connection->query($sql);
-        print_r($result);
     }
 
     protected static function insert($data, $table)

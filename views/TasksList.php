@@ -81,11 +81,6 @@
 	<?php if (Auth::getAuth()): ?>
 		<?php  foreach($data as $id => $task): ?>
 		<div class="col-sm-10">
-			<?php 
-			echo '<pre>';
-			print_r($task);
-			echo '</pre>';		
-			?>		
 			<form class="m-3" action="/tasks/?action=updateTask&id=<?php echo $task[0];?>" method="POST" role="form">
 				<div class="form-group">
 					<input type="text" class="form-control" id="inputNickname" name="user_name" placeholder="Введите ваше имя" value=<?php echo $task[2]; ?> readonly>
@@ -112,12 +107,7 @@
 		<?php endforeach; ?>
 	<?php else: ?>
 		<?php  foreach($data as $id => $task): ?>
-		<div class="col-sm-10">
-			<?php 
-			echo '<pre>';
-			print_r($task);
-			echo '</pre>';		
-			?>		
+		<div class="col-sm-10">	
 			<div id=<?php echo '"' . $task['0'] . '"';?> class="col-md">
 				<div class="user_name"><?php echo $task['2']; ?></div>
 				<div class="user_email"><?php echo $task['3']; ?></div>

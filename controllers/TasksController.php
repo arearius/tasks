@@ -39,9 +39,9 @@ class TasksController
 
     public function addTask(){
         $task = [
-            'user_name' => $_POST['user_name'],
-            'mail' => $_POST['mail'],
-            'text' => $_POSTp['text']
+            'user_name' => Helpers::getPost('user_name'),
+            'mail' => Helpers::getPost('mail'),
+            'text' => Helpers::getPost('text')
         ];
 	    $this->task->addTask($task);
 	    $sort = 0;

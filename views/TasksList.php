@@ -107,7 +107,7 @@
 		<?php endforeach; ?>
 	<?php else: ?>
 		<?php  foreach($data as $id => $task): ?>
-		<div class="col-sm-10">	
+		<div class="col-sm-10 pb-3">	
 			<div id=<?php echo '"' . $task['0'] . '"';?> class="col-md">
 				<div class="user_name"><?php echo $task['2']; ?></div>
 				<div class="user_email"><?php echo $task['3']; ?></div>

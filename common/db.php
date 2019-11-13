@@ -70,6 +70,17 @@ class Db
         return $rows;
     }
 
+    protected static function getSomeRowsFromTableSort($table, $count, $sort)
+    {
+        $sql = "SELECT * FROM $table LIMIT $count ORDER BY $sort";
+        $result = self::$connection->query($sql);
+        $rows = [];
+        while ($row = mysqli_fetch_row($result)){
+            $rows[] = $row;
+        };
+        return $rows;
+    }
+
     protected static function insertToTable($table, $values)
     {
 

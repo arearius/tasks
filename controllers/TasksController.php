@@ -16,8 +16,8 @@ class TasksController
         Auth::getAuth();
     	if (isset($_GET['page'])) $page=$_GET['page'];
     	else $page = 0;
-    	$sort = 0;
-    	$tasks = $this->task->getTasks($page, $sort);
+        if (isset($_GET['sortBy'])) $sort=$_GET['sortBy'];
+        $tasks = $this->task->getTasks($page, $sort);
 	    $this->view->show('TasksList', $tasks);
     }
 

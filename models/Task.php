@@ -3,7 +3,6 @@
 
 class Task extends Db
 {
-    private $tableName = 'tasks';
 
     public function __construct()
     {
@@ -33,17 +32,21 @@ class Task extends Db
     }
 
     public function getTasks($page, $sort=0){
-	    $tasks = parent::getSomeRowsFromTable($this->tableName, 3);
+        if ($sort) {
+            $tasks = parent::getSomeRowsFromTableSort(config::$db['data_table'], config::$staf['tasks_count_on_page'], $sort);
+        } else {            
+            $tasks = parent::getSomeRowsFromTable(config::$db['data_table'], config::$staf['tasks_count_on_page']);
+        }
 	    return $tasks;
     }
 
     public function addTask($newTask){
-        parent::insertToTable($this->tableName, $values);
+        parent::insertToTable(config::$db['data_table'], $values);
     }
 
     public function updateTask($newTask){
-        $task = parent::getByFieldFromTable($this->tableName, 'id', $newTask['id']);
+        $task = parent::getByFieldFromTable(config::$db['data_table'], 'id', $newTask['id']);
         if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
-        parent::updateToTable($this->tableName, $newTask, 'id', $newTask['id']);
+        parent::updateToTable(config::$db['data_table'], $newTask, 'id', $newTask['id']);
     }
 }

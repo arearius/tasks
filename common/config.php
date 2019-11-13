@@ -8,7 +8,8 @@ class Config
         'user' => 'tasks',
         'password' => 'Tasks123@',
         'db_name' => 'tasks',
-        'tables' => ['tasks', 'auth']
+		'tables' => ['tasks', 'auth'],
+		'data_table' => 'tasks'
     ];
 
     public static $tablesStructure = [
@@ -24,39 +25,19 @@ class Config
             ],
             'primaryKey' => 'id'
         ],
-	'auth' => [
-	    'fields' => [
-		'session' => 'varchar(40) COLLATE utf8_bin NOT NULL, '
-	    ],
-	    'primaryKey' => 'session'
-	]
+		'auth' => [
+			'fields' => [
+			'session' => 'varchar(40) COLLATE utf8_bin NOT NULL, '
+			],
+			'primaryKey' => 'session'
+		]
     ];
 
     public static $users = [
 	'admin' => '123'
     ];
 
-    public static $lang = [
-	"ru" => [
-	    "defaultview" => [
-		"selected_language_en" => "English_ru",
-		"selected_language_ru" => "Russian_ru",
-		"register_form" => [
-		    "nikname_label" => "input your nikname rus",
-		    "nikname_invalid_message" => "nikname must be valid rus"
-		]
-	    ]
-	],
-	"en" => [
-	    "defaultview" => [
-		"selected_language_en" => "English",
-		"selected_language_ru" => "Russian",
-		"register_form" => [
-		    "nikname_label" => "input your nikname",
-		    "nikname_invalid_message" => "nikname must be valid"
-		]
-
-	    ]
-	]
-    ];
+    public static $staf[
+		'tasks_count_on_page' => 3
+	];
 }

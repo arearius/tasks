@@ -57,6 +57,9 @@ class Db
         $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = `{$field_value}`";
         echo $sql;
         $result = self::$connection->query($sql);
+        echo '<pre>';
+        print_r($result);
+        echo '</pre>';
         $row = mysqli_fetch_row($result);
         echo '<pre>';
         print_r($row);

@@ -97,6 +97,11 @@
 					<label for="inputText">Текст задачи:</label>
 					<textarea class="form-control" id="inputText" name="text" rows="3"><?php echo $task[4]; ?></textarea>
 				</div>
+				<?php if($task['6'] == 1): ?>
+					<div class="form-group">
+						<label for="inputText">Задача изменена администратором</label>
+					</div>
+				<?php endif; ?>
 				<div class="form-check">
 					<input type="checkbox" class="form-check-input" id="TaskDone" name='status'>
 					<label class="form-check-label" for="TaskDone" >Задача выполнена</label>

@@ -50,7 +50,7 @@ class Task extends Db
             if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
             parent::updateToTable(config::$db['data_table'], $newTask, 'id', $newTask['id']);
         } else {
-            ehco 'Необходимо авторизоваться для обновления задач!';
+            echo 'Необходимо авторизоваться для обновления задач!';
             header("Location: http://31.184.254.242/tasks/");
             exit();
         }

@@ -106,8 +106,7 @@ class Db
             $sql .= "`{$param}` = " . "'{$value}'"
             $index++;
             if ($index < count($values)) {
-                $valuesStr .=", ";
-                $paramsStr .=", ";
+                $sql .=", ";
             }
             else {
                 $sql .= " WHERE `{$field_name}`='{$field_value}'";

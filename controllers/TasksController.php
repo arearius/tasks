@@ -55,7 +55,7 @@ class TasksController
             'id' => $_GET['id'],
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
-            'text' => $_POSTp['text']
+            'text' => $_POST['text']
         ];
         $task = $this->task->updateTask($newTask);
 	    $sort = 0;

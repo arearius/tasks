@@ -55,8 +55,13 @@ class Db
 	protected static function getByFieldFromTable($table, $field_name, $field_value)
     {
         $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = `{$field_value}`";
+        echo $sql;
         $result = self::$connection->query($sql);
-        return  mysqli_fetch_row($result);
+        $row = mysqli_fetch_row($result);
+        echo '<pre>';
+        print_r($row);
+        echo '</pre>';
+        return  $row;
     }
 
     protected static function getSomeRowsFromTable($table, $count)

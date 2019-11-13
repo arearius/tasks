@@ -43,6 +43,10 @@ class TasksController
             'mail' => Helpers::getPost('mail'),
             'text' => Helpers::getPost('text')
         ];
+        echo 'add task;';
+        echo '<pre>';
+        print_r($task);
+        echo '</pre>';
 	    $this->task->addTask($task);
 	    $sort = 0;
 	    $page = 0;

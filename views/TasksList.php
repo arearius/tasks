@@ -20,23 +20,6 @@
 		let url = "";
 		url = window.location.origin + window.location.pathname + "?sortBy=" + event.srcElement.value;
 		window.location.href = url;
-		/*if (window.location.search == ""){
-			url = window.location.href + "?sortBy=" + event.srcElement.value;
-		} else {
-			
-			params.forEach(function(param) {
-				console.log(param);
-				if (param.indexOf('sortBy')+1){
-					if (newParams == "") newParams = "?sortBy=" + event.srcElement.value;
-					else newParams += "&sortBy=" + event.srcElement.value;
-				} else{
-					newParams += param;
-				}
-			});
-			console.log('newParams = ' + newParams);
-			url = window.location.origin + window.location.pathname + newParams;
-		}
-		window.location.href = url;*/
 	}
 </script>
 <div class="modal" id="myModal">

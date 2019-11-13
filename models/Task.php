@@ -45,8 +45,14 @@ class Task extends Db
     }
 
     public function updateTask($newTask){
-        $task = parent::getByFieldFromTable(config::$db['data_table'], 'id', $newTask['id']);
-        if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
-        parent::updateToTable(config::$db['data_table'], $newTask, 'id', $newTask['id']);
+        if (Auth::getAuth()){
+            $task = parent::getByFieldFromTable(config::$db['data_table'], 'id', $newTask['id']);
+            if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
+            parent::updateToTable(config::$db['data_table'], $newTask, 'id', $newTask['id']);
+        } else {
+            ehco 'Необходимо авторизоваться для обновления задач!';
+            header("Location: http://31.184.254.242/tasks/");
+            exit();
+        }
     }
 }

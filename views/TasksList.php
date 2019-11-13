@@ -14,7 +14,6 @@
 <body>
 <script>
 	function onSortChange(event) {		
-		console.log(event.srcElement.value);
 		var params = window.location.search.split("&");
 		var newParams = "";
 		let url = "";

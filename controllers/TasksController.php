@@ -21,6 +21,13 @@ class TasksController
 	    $this->view->show('TasksList', $tasks);
     }
 
+    public function updateError(){
+        echo 'Для обновления задач необходимо авторизоваться!';
+        sleep(5);
+        header("Location: http://31.184.254.242/tasks/");
+        exit();
+    }
+
     public function signUp(){
         $page = 0;
         $sort = 0;

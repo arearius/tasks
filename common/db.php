@@ -73,6 +73,7 @@ class Db
     protected static function getSomeRowsFromTableSort($table, $count, $sort)
     {
         $sql = "SELECT * FROM $table LIMIT $count ORDER BY $sort";
+        echo $sql;
         $result = self::$connection->query($sql);
         $rows = [];
         while ($row = mysqli_fetch_row($result)){

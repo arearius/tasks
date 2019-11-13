@@ -47,7 +47,7 @@ class Db
         $result = self::$connection->query($sql);
     }
 	
-	protected static function getByParamFromTable($table, $id)
+	protected static function getByFieldFromTable($table, $field_name, $field_value)
     {
         $sql = "SELECT * FROM $table";
         $result = self::$connection->query($sql);

@@ -103,7 +103,7 @@
 					</div>
 				<?php endif; ?>
 				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="TaskDone" name='status' checked="checked">
+					<input type="checkbox" class="form-check-input" id="TaskDone" name='status' <?php if ($task[5]) echo 'checked="checked"'; ?>>
 					<label class="form-check-label" for="TaskDone" >Задача выполнена</label>
 				</div>
 				<button type="submit" class="btn btn-primary">Обновить задачу</button>

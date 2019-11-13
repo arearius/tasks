@@ -3,11 +3,11 @@
 class Helpers {
 
     public static function getPost($param){
-        return extract(array_map('htmlspecialchars', $_POST[$param]), EXTR_OVERWRITE);
+        return htmlspecialchars($_POST[$param]);
     }
 
     public static function getGet($param){
-        return extract(array_map('htmlspecialchars', $_GET[$param]), EXTR_OVERWRITE);
+        return htmlspecialchars($_GET[$param]);
     }
 
 }

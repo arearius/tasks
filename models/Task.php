@@ -33,19 +33,19 @@ class Task extends Db
     }
 
     public function getTasks($page, $sort=0){
-	    $tasks = parent::getSomeRowsFromTable($tableName, 3);
+	    $tasks = parent::getSomeRowsFromTable($this->tableName, 3);
 	    return $tasks;
     }
 
     public function addTask($newTask){
-        parent::insertToTable($tableName, $values);
+        parent::insertToTable($this->tableName, $values);
 	    echo $sql;
     }
 
     public function updateTask($newTask){
-        $task = parent::getByFieldFromTable($tableName, 'id', $newTask['id']);
+        $task = parent::getByFieldFromTable($this->tableName, 'id', $newTask['id']);
         if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
-        parent::updateToTable($tableName, $values, $field_name, $field_value);
+        parent::updateToTable($this->tableName, $values, $field_name, $field_value);
 	    echo $sql;
     }
 }

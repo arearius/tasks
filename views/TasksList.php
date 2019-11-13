@@ -20,7 +20,7 @@
 		let url = "";
 		url = window.location.origin + window.location.pathname + "?sortBy=" + event.srcElement.value;
 		window.location.href = url;
-		if (window.location.search == ""){
+		/*if (window.location.search == ""){
 			url = window.location.href + "?sortBy=" + event.srcElement.value;
 		} else {
 			
@@ -36,7 +36,7 @@
 			console.log('newParams = ' + newParams);
 			url = window.location.origin + window.location.pathname + newParams;
 		}
-		window.location.href = url;
+		window.location.href = url;*/
 	}
 </script>
 <div class="modal" id="myModal">

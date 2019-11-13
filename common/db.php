@@ -45,24 +45,30 @@ class Db
     {
         $sql = "SELECT * FROM $table";
         $result = self::$connection->query($sql);
+        $rows = [];
+        while ($row = mysqli_fetch_row($result)){
+            $rows[] = $row;
+        };
+        return $rows;
     }
 	
 	protected static function getByFieldFromTable($table, $field_name, $field_value)
     {
         $sql = "SELECT * FROM `{$table}` WHERE `{$field_name}` = `{$field_value}`";
         $result = self::$connection->query($sql);
+        return  mysqli_fetch_row($result);
     }
 
     protected static function getSomeRowsFromTable($table, $count)
     {
-    $sql = "SELECT * FROM $table LIMIT $count";
-    echo $sql;
-	$result = self::$connection->query($sql);
-	$rows = [];
-	while ($row = mysqli_fetch_row($result)){
-	    $rows[] = $row;
-	};
-	return $rows;
+        $sql = "SELECT * FROM $table LIMIT $count";
+        echo $sql;
+        $result = self::$connection->query($sql);
+        $rows = [];
+        while ($row = mysqli_fetch_row($result)){
+            $rows[] = $row;
+        };
+        return $rows;
     }
 
     protected static function insertToTable($table, $values)

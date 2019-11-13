@@ -37,7 +37,7 @@ class Task extends Db
 	return $tasks;
     }
 
-    public function addTask(){
+    public function updateTask(){
 	echo '<pre>';
 	print_r($_POST);
 	echo '</pre>';

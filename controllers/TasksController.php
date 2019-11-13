@@ -52,7 +52,7 @@ class TasksController
 
     public function updateTask(){
         $newTask = [
-            'id' => $_POST['task_id'],
+            'id' => $_GET['id'],
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
             'text' => $_POSTp['text']

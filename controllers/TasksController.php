@@ -42,7 +42,7 @@ class TasksController
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
             'text' => $_POSTp['text']
-        ]
+        ];
 	    $this->task->addTask($task);
 	    $sort = 0;
 	    $page = 0;
@@ -56,7 +56,7 @@ class TasksController
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
             'text' => $_POSTp['text']
-        ]
+        ];
         $task = $this->task->updateTask($newTask);
 	    $sort = 0;
 	    $page = 0;

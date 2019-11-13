@@ -90,6 +90,32 @@ class Db
         //print_r($result);
     }
 
+    protected static function updateToTable($table, $values, $field_name, $field_value)
+    {
+
+        $sql = "INSERT INTO `{$table}` " ;
+        $valuesStr = "(";
+        $paramsStr = "(";
+        $index = 0;
+        foreach ($values as $param => $value){
+            $valuesStr .= "'{$value}'";
+            $paramsStr .= "`{$param}`";
+            $index++;
+            if ($index < count($values)) {
+                $valuesStr .=", ";
+                $paramsStr .=", ";
+            }
+            else {
+                $valuesStr .=")";
+                $paramsStr .=")";
+            }
+        }
+        $sql .= $paramsStr . " values " . $valuesStr;
+        //echo $sql;
+        $result = self::$connection->query($sql);
+        //print_r($result);
+    }
+
     protected static function insert($data, $table)
     {
         $sql = "INSERT INTO `$table` (`text`) VALUES ('$data')";

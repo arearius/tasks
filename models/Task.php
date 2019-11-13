@@ -3,6 +3,7 @@
 
 class Task extends Db
 {
+    private $tableName = 'tasks';
 
     public function __construct()
     {
@@ -33,12 +34,19 @@ class Task extends Db
     }
 
     public function getTasks($page, $sort=0){
-	$tasks = parent::getSomeRowsFromTable('tasks', 3);
-	return $tasks;
+	    $tasks = parent::getSomeRowsFromTable($tableName, 3);
+	    return $tasks;
     }
 
-    public function updateTask(){
-	$sql = "INSERT INTO 'tasks' (`user_name`, `mail`, `text`) values ('{}')";
-	echo $sql;
+    public function addTask($newTask){
+        parent::insertToTable($tableName, $values);
+	    echo $sql;
+    }
+
+    public function updateTask($newTask){
+        $task = parent::getByFieldFromTable($tableName, 'id', $newTask['id']);
+        if ($task['text'] != $newTask['text']) $newTask['modified'] = 1;
+        parent::updateToTable($tableName, $values, $field_name, $field_value);
+	    echo $sql;
     }
 }

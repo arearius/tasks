@@ -58,6 +58,7 @@ class TasksController
             'id' => $_GET['id'],
             'user_name' => $_POST['user_name'],
             'mail' => $_POST['mail'],
+            'status' => $_POST['status'],
             'text' => $_POST['text']
         ];
         $task = $this->task->updateTask($newTask);

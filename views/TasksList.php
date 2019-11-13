@@ -99,7 +99,7 @@
 				</div>
 				<div class="form-check">
 					<input type="checkbox" class="form-check-input" id="TaskDone">
-					<label class="form-check-label" for="TaskDone">Задача выполнена</label>
+					<label class="form-check-label" for="TaskDone" name='status'>Задача выполнена</label>
 				</div>
 				<button type="submit" class="btn btn-primary">Обновить задачу</button>
 			</form>

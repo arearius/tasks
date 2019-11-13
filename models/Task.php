@@ -41,7 +41,7 @@ class Task extends Db
     }
 
     public function addTask($newTask){
-        parent::insertToTable(config::$db['data_table'], $values);
+        parent::insertToTable(config::$db['data_table'], $newTask);
     }
 
     public function updateTask($newTask){

@@ -24,6 +24,8 @@
 <script>
 	function formSignUp(){
 		console.log('submit');
+		var formData = new FormData(document.forms.signUpForm);
+		console.log(formData);		
 	}
 </script>
 <div class="modal" id="myModal">

@@ -29,7 +29,7 @@
   			console.log(key, value);
 		}
 		var xhr = new XMLHttpRequest();
-  		xhr.open("POST", "/?controller=AuthController&action=signUp");
+  		xhr.open("POST", "/tasks/?controller=AuthController&action=signUp");
 		xhr.send(formData);
 		xhr.onload = function() {
 			if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка

@@ -13,7 +13,6 @@ class TasksController
     }
 
     public function TasksList(){
-        Auth::getAuth();
     	if (isset($_GET['page'])) $page=$_GET['page'];
     	else $page = 0;
         if (isset($_GET['sortBy'])) $sort=$_GET['sortBy'];

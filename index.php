@@ -8,5 +8,5 @@ include_once __DIR__ . '/autoload.php';
 $action = $_GET['action'] ?? 'TasksList';
 $controller = if (isset($_GET['controller'])) $controller = $_GET['controller'];
 else $controller = 'TaskController';
-$controller = new {$controller}}();
-$controller->{$action}();
+//$controller = new {$controller}}();
+//$controller->{$action}();

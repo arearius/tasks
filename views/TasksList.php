@@ -139,7 +139,7 @@
 			<ul class="pagination">
 				<li class="page-item"><a class="page-link" href="#">Вперед</a></li>
 				<?php for ($i = 0; $i < $pages; ++$i): ?>
-					<li class="page-item"><a class="page-link" href=<?php echo '"http://31.184.254.242/tasks?page='. $i . '"'; ?>><?php echo $i; ?></a></li>
+					<li class="page-item"><a class="page-link" href=<?php echo '"http://31.184.254.242/tasks?page='. $i+1 . '"'; ?>><?php echo $i+1; ?></a></li>
 				<?php endfor; ?>
 				<li class="page-item"><a class="page-link" href="#">Назад</a></li>				
 			</ul>

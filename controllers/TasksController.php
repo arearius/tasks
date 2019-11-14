@@ -28,25 +28,6 @@ class TasksController
         exit();
     }
 
-    public function signUp(){
-        $page = 0;
-        $sort = 0;
-        if (Auth::signUp()){
-            $tasks = $this->task->getTasks($page, $sort);
-            $this->view->show('TasksList', $tasks);
-        } else {
-            $this->view->show('AuthError');
-        }
-    }
-
-    public function signOut(){
-        $page = 0;
-        $sort = 0;
-        Auth::signOut();
-        $tasks = $this->task->getTasks($page, $sort);
-        $this->view->show('TasksList', $tasks);
-    }
-
     public function addTask(){
         $task = [
             'user_name' => Helpers::getPost('user_name'),

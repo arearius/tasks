@@ -29,7 +29,7 @@
   			console.log(key, value);
 		}
 		var xhr = new XMLHttpRequest();
-  		xhr.open("POST", "/auth?action=signUp");
+  		xhr.open("POST", "/?controller=AuthController&action=signUp");
 		xhr.send(formData);
 		if (xhr.status != 200) {
 		// обработать ошибку

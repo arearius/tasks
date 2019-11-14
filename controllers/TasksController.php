@@ -36,7 +36,7 @@ class TasksController
 
     public function addTask(){
         $sort = 0;
-	    $page = 0;	    
+	    $page = 1;	    
         $task = [
             'user_name' => Helpers::getPost('user_name'),
             'mail' => Helpers::getPost('mail'),
@@ -56,7 +56,7 @@ class TasksController
     public function updateTask(){
         if (Auth::getAuth()) {
             $sort = 0;
-            $page = 0;            
+            $page = 1;            
             if ($_POST['status'] == 'on') $status=1;
             else $status=0;
             $newTask = [

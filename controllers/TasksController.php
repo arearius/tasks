@@ -13,7 +13,10 @@ class TasksController
     }
 
     public function TasksList(){
-    	if (isset($_GET['page'])) $page=Helpers::getGet($_GET['page']);
+    	if (isset($_GET['page'])) {
+            $page=Helpers::getGet($_GET['page']);
+            echo 'page =' . $page;
+        }
     	else $page = 0;
         if (isset($_GET['sortBy'])) $sort=Helpers::getGet($_GET['sortBy']);
         else $sort = 0;

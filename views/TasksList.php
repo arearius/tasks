@@ -1,5 +1,4 @@
 <?php
-	$data = $tasks;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -89,7 +88,7 @@
 		<?php endif; ?>
 	</div>
 	<?php if (Auth::getAuth()): ?>
-		<?php  foreach($data as $id => $task): ?>
+		<?php  foreach($data['tasks'] as $id => $task): ?>
 		<div class="col-sm-10">
 			<form class="m-3" action="/tasks/?action=updateTask&id=<?php echo $task[0];?>" method="POST" role="form">
 				<div class="form-group">
@@ -116,7 +115,7 @@
 		</div>
 		<?php endforeach; ?>
 	<?php else: ?>
-		<?php  foreach($data as $id => $task): ?>
+		<?php  foreach($data['tasks'] as $id => $task): ?>
 		<div class="col-sm-10 pb-3">	
 			<div id=<?php echo '"' . $task['0'] . '"';?> class="col-md">
 				<div class="user_name"><?php echo $task['2']; ?></div>
@@ -131,7 +130,7 @@
 </div>
 <?php if($tasks_count > config::$staf['tasks_count_on_page']): ?>
 	<?php
-		$pages = intdiv($tasks_count, $config::$staf['tasks_count_on_page']) + intdiv(($tasks_count%$config::$staf['tasks_count_on_page'] + $config::$staf['tasks_count_on_page']),$config::$staf['tasks_count_on_page']);
+		$pages = intdiv($data['tasks_count'], $config::$staf['tasks_count_on_page']) + intdiv(($data['tasks_count']%$config::$staf['tasks_count_on_page'] + $config::$staf['tasks_count_on_page']),$config::$staf['tasks_count_on_page']);
 		echo 'pages = ' . $pages . PHP_EOL;
 		echo 'tasks count = ' . $tasks_count . PHP_EOL;
 	?>

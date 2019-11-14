@@ -19,7 +19,11 @@ class TasksController
         else $sort = 0;
         $tasks = $this->task->getTasks($page, $sort);
         $tasks_count = $this->task->getTasksCount();
-	    $this->view->show('TasksList');
+        $data = [
+            'tasks' => $tasks;
+            'tasks_count' => $tasks_count;
+        ];
+	    $this->view->show('TasksList', $data);
     }
 
     public function updateError(){
@@ -38,8 +42,13 @@ class TasksController
             'text' => Helpers::getPost('text')
         ];
 	    $this->task->addTask($task);
-	    $tasks = $this->task->getTasks($page, $sort);
-	    $this->view->show('TasksList');
+        $tasks = $this->task->getTasks($page, $sort);
+        $tasks_count = $this->task->getTasksCount();
+        $data = [
+            'tasks' => $tasks;
+            'tasks_count' => $tasks_count;
+        ];
+	    $this->view->show('TasksList', $data);
     }
 
     public function updateTask(){
@@ -57,7 +66,12 @@ class TasksController
             ];
             $task = $this->task->updateTask($newTask);
             $tasks = $this->task->getTasks($page, $sort);
-            $this->view->show('TasksList');
+            $tasks_count = $this->task->getTasksCount();
+            $data = [
+                'tasks' => $tasks;
+                'tasks_count' => $tasks_count;
+            ];
+            $this->view->show('TasksList', $data);
         } else {
             $this->view->show('UpdateErrorByAuth');
         }

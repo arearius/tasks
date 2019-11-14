@@ -12,12 +12,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>Ошибка обновления задачи. Для данной операции необходимо авторизоваться!</div>
+    <script>
+      alert('Для правки задач необходимо авторизоваться!');
+      document.location.href = "http://31.184.254.242/tasks/";
+    </script>
     <div></div> 
-<?php 
-  sleep(2);
-  header("Location: http://31.184.254.242/tasks/"); 
-?>
 <footer></footer>
 </body>
 </html>

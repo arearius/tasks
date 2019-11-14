@@ -13,7 +13,11 @@
 </head>
 <body>
     <div>Ошибка обновления задачи. Для данной операции необходимо авторизоваться!</div>
-    <div>http://31.184.254.242/tasks/</div> 
+    <div></div> 
+<?php 
+  sleep(2);
+  header("Location: http://31.184.254.242/tasks/"); 
+?>
 <footer></footer>
 </body>
 </html>

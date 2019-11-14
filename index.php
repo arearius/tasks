@@ -6,6 +6,7 @@ session_start();
 include_once __DIR__ . '/autoload.php';
 
 $action = $_GET['action'] ?? 'TasksList';
-print_r($_GET);
-$controller = new TasksController();
+$controller = if (isset($_GET['controller'])) $controller = $_GET['controller'];
+else $controller = 'TaskController';
+$controller = new {$controller}}();
 $controller->{$action}();

@@ -13,12 +13,9 @@ class TasksController
     }
 
     public function TasksList(){
-    	if (isset($_GET['page'])) {
-            $page=Helpers::getGet($_GET['page']);
-            echo 'page =' . $page;
-        }
+    	if (isset($_GET['page'])) $page=Helpers::validate($_GET['page']);
     	else $page = 0;
-        if (isset($_GET['sortBy'])) $sort=Helpers::getGet($_GET['sortBy']);
+        if (isset($_GET['sortBy'])) $sort=Helpers::validate($_GET['sortBy']);
         else $sort = 0;
         $tasks = $this->task->getTasks($page, $sort);
         $tasks_count = $this->task->getTasksCount();
@@ -41,9 +38,9 @@ class TasksController
         $sort = 0;
 	    $page = 1;	    
         $task = [
-            'user_name' => Helpers::getPost('user_name'),
-            'mail' => Helpers::getPost('mail'),
-            'text' => Helpers::getPost('text')
+            'user_name' => Helpers::validate($_POST['user_name']),
+            'mail' => Helpers::validate($_POST['mail']),
+            'text' => Helpers::validate($_POST['text'])
         ];
 	    $this->task->addTask($task);
         $tasks = $this->task->getTasks($page, $sort);
@@ -64,10 +61,10 @@ class TasksController
             else $status=0;
             $newTask = [
                 'id' => $_GET['id'],
-                'user_name' => $_POST['user_name'],
-                'mail' => $_POST['mail'],
+                'user_name' => Helpers::validate($_POST['user_name']),
+                'mail' => Helpers::validate($_POST['mail']),
                 'status' => $status,
-                'text' => $_POST['text']
+                'text' => Helpers::validate($_POST['text'])
             ];
             $task = $this->task->updateTask($newTask);
             $tasks = $this->task->getTasks($page, $sort);

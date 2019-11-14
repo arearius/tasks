@@ -7,7 +7,7 @@ include_once __DIR__ . '/autoload.php';
 
 $action = $_GET['action'] ?? 'TasksList';
 switch ($_GET['controller']) {
-    case 'AuthController' : $controller = new AuthController(); echo 'auth'; break;
+    case 'AuthController' : $controller = new AuthController(); break;
     default : $controller = new TasksController(); 
 }
 $controller->{$action}();

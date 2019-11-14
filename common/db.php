@@ -122,10 +122,12 @@ class Db
         $result = self::$connection->query($sql);
     }
 
-    protected static function insert($data, $table)
-    {
-        $sql = "INSERT INTO `$table` (`text`) VALUES ('$data')";
-        self::sql_query($sql);
+    protected static function getRowsCount($table){
+        $sql = "SELECT COUNT(*) FROM `{$table}`";
+        $result = self::$connection->query($sql);
+        echo 'count = ' . $result;
+        echo $result;
+        return $result;
     }
 
     private static function sql_query($sql)

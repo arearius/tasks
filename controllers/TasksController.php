@@ -17,7 +17,8 @@ class TasksController
     	else $page = 0;
         if (isset($_GET['sortBy'])) $sort=$_GET['sortBy'];
         $tasks = $this->task->getTasks($page, $sort);
-	    $this->view->show('TasksList', $tasks);
+    $tasks_count = $this->task->getTasksCount();
+	    $this->view->show('TasksList');
     }
 
     public function updateError(){
@@ -28,20 +29,22 @@ class TasksController
     }
 
     public function addTask(){
+        $sort = 0;
+	    $page = 0;	    
         $task = [
             'user_name' => Helpers::getPost('user_name'),
             'mail' => Helpers::getPost('mail'),
             'text' => Helpers::getPost('text')
         ];
 	    $this->task->addTask($task);
-	    $sort = 0;
-	    $page = 0;
 	    $tasks = $this->task->getTasks($page, $sort);
-	    $this->view->show('TasksList', $tasks);
+	    $this->view->show('TasksList');
     }
 
     public function updateTask(){
         if (Auth::getAuth()) {
+            $sort = 0;
+            $page = 0;            
             if ($_POST['status'] == 'on') $status=1;
             else $status=0;
             $newTask = [
@@ -52,10 +55,8 @@ class TasksController
                 'text' => $_POST['text']
             ];
             $task = $this->task->updateTask($newTask);
-            $sort = 0;
-            $page = 0;
             $tasks = $this->task->getTasks($page, $sort);
-            $this->view->show('TasksList', $tasks);
+            $this->view->show('TasksList');
         } else {
             $this->view->show('UpdateErrorByAuth');
         }

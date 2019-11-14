@@ -138,7 +138,7 @@
 		<nav aria-label="navigation">
 			<ul class="pagination">
 				<li class="page-item"><a class="page-link" href="#">Вперед</a></li>
-				<?php forfor ($i = 0; $i < $pages; ++$i):?>
+				<?php for ($i = 0; $i < $pages; ++$i):?>
 					<li class="page-item"><a class="page-link" href=<?php echo '"http://31.184.254.242/tasks?page='. $i . '"'; ?>><?php echo $i; ?></a></li>
 				<?php endforeach; ?>
 				<li class="page-item"><a class="page-link" href="#">Назад</a></li>				

@@ -25,12 +25,14 @@
 	function formSignUp(){
 		console.log('submit');
 		var formData = new FormData(document.forms.signUpForm);
+		var arr = [];
 		for (var [key, value] of formData.entries()) { 
-  			console.log(key, value);
+  			arr[key] = value;
 		}
-		formData.append('controller', 'AuthController');
+		arr['controller'] = 'AuthController';
+		console.log(arr);
 		var xhr = new XMLHttpRequest();
-  		xhr.open("POST", "/tasks/?controller=AuthController&action=signUp");
+  		xhr.open("POST", "http://31.184.254.242/tasks/?controller=AuthController&action=signUp");
 		xhr.send(formData);
 		xhr.onload = function() {
 			if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка

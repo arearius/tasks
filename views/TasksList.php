@@ -32,11 +32,9 @@
   		xhr.open("POST", "/?controller=AuthController&action=signUp");
 		xhr.send(formData);
 		if (xhr.status != 200) {
-		// обработать ошибку
-			alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+			alert('Ошибка при обращении к сайту');
 		} else {
-		// вывести результат
-			alert( xhr.responseText ); // responseText -- текст ответа.
+			document.window.location.href = "http://31.184.254.242/tasks/";
 		}
 	}
 </script>

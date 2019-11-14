@@ -132,16 +132,16 @@
 	<?php
 		$pages = intdiv($data['tasks_count'], config::$staf['tasks_count_on_page']) + intdiv(($data['tasks_count']%config::$staf['tasks_count_on_page'] + config::$staf['tasks_count_on_page']),config::$staf['tasks_count_on_page']);
 		echo 'pages = ' . $pages . PHP_EOL;
-		echo 'tasks count = ' . $tasks_count . PHP_EOL;
+		echo 'tasks count = ' . $data['tasks_count'] . PHP_EOL;
 	?>
 	<div class="col-sm-10 pb-3">
 		<nav aria-label="navigation">
 			<ul class="pagination">
 				<li class="page-item"><a class="page-link" href="#">Вперед</a></li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">Назад</a></li>
+				<?php forfor ($i = 0; $i < $pages; ++$i):?>
+					<li class="page-item"><a class="page-link" href=<?php echo '"http://31.184.254.242/tasks?page='. $i . '"'; ?>><?php echo $i; ?></a></li>
+				<?php endforeach; ?>
+				<li class="page-item"><a class="page-link" href="#">Назад</a></li>				
 			</ul>
 		</nav>
 	</div>

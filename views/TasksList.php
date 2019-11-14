@@ -24,8 +24,13 @@
 <script>
 	function formSignUp(){
 		console.log('submit');
-		var formData = new FormData(this);
-		console.log(formData);		
+		var formData = new FormData(document.forms.signUpForm);
+		for (var [key, value] of formData.entries()) { 
+  			console.log(key, value);
+		}
+		var xhr = new XMLHttpRequest();
+  		xhr.open("POST", "/tasks?action=signUp");
+  		xhr.send(formData);
 	}
 </script>
 <div class="modal" id="myModal">

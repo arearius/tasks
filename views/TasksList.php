@@ -149,14 +149,14 @@
 <?php endif; ?>
 <form class="m-3" action="/tasks/?action=addTask" method="POST" role="form">
     <div class="form-group">
-        <input type="text" class="form-control" id="inputNickname" name="user_name" placeholder="Введите ваше имя">
+        <input type="text" class="form-control" id="inputNickname" name="user_name" placeholder="Введите ваше имя" required>
     </div>
     <div class="form-group">
-        <input type="email" class="form-control" id="inputEmail" name="mail" area-describedby="emailHelp" placeholder="Введите вашу почту">
+        <input type="email" class="form-control" id="inputEmail" name="mail" area-describedby="emailHelp" placeholder="Введите вашу почту" required>
     </div>
     <div class="form-group">
         <label for="inputText">Текст задачи:</label>
-        <textarea class="form-control" id="inputText" name="text" rows="3"></textarea>
+        <textarea class="form-control" id="inputText" name="text" rows="3" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Создать задачу</button>
 </form>

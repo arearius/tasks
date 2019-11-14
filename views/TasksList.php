@@ -29,7 +29,7 @@
   			console.log(key, value);
 		}
 		var xhr = new XMLHttpRequest();
-  		xhr.open("POST", "/tasks?action=signUp");
+  		xhr.open("POST", "/auth?action=signUp");
 		xhr.send(formData);
 		if (xhr.status != 200) {
 		// обработать ошибку
@@ -47,7 +47,7 @@
 		<h4 class="modal-title">Введите логин и пароль</h4>	
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-	  <form class="m-3" action="signUp" id="signUpForm" onsubmit="formSignUp(); return false;">
+	  <form class="m-3" action="#" id="signUpForm" onsubmit="formSignUp(); return false;">
       <div class="modal-body">
 			<div class="form-group">
 				<input type="text" class="form-control" id="userLogin" name="user_name" placeholder="Введите ваше имя">

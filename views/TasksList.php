@@ -21,6 +21,11 @@
 		window.location.href = url;
 	}
 </script>
+<script>
+	function formSignUp(){
+		console.log('submit');
+	}
+</script>
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -28,7 +33,7 @@
 		<h4 class="modal-title">Введите логин и пароль</h4>	
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-	  <form class="m-3">
+	  <form class="m-3" action="signUp" id="signUpForm" onsubmit="formSignUp(); return false;">
       <div class="modal-body">
 			<div class="form-group">
 				<input type="text" class="form-control" id="userLogin" name="user_name" placeholder="Введите ваше имя">
@@ -38,7 +43,7 @@
 			</div>
       </div>
       <div class="modal-footer">
-		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Войти</button>
+		<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Войти</button>
       </div>
 	  </form>
     </div>

@@ -35,10 +35,10 @@
   		xhr.open("POST", "http://31.184.254.242/tasks/?controller=AuthController&action=signUp");
 		xhr.send(formData);
 		xhr.onload = function() {
-			if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
-				alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
-			} else { // если всё прошло гладко, выводим результат
-				alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+			if (xhr.status != 200) { 
+				alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); 
+			} else {
+				console.log(xhr.response);
 			}
 		};
 	}

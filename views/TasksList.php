@@ -1,4 +1,5 @@
 <?php
+	$data = $tasks;
 ?>
 <!DOCTYPE html>
 <html lang="ru">

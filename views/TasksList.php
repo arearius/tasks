@@ -31,12 +31,13 @@
 		var xhr = new XMLHttpRequest();
   		xhr.open("POST", "/?controller=AuthController&action=signUp");
 		xhr.send(formData);
-		console.log(xhr);
-		if (xhr.status != 200) {
-			alert('Ошибка при обращении к сайту');
-		} else {
-			document.window.location.href = "http://31.184.254.242/tasks/";
-		}
+		xhr.onload = function() {
+			if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+				alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+			} else { // если всё прошло гладко, выводим результат
+				alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+			}
+		};
 	}
 </script>
 <div class="modal" id="myModal">

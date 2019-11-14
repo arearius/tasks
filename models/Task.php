@@ -33,9 +33,11 @@ class Task extends Db
 
     public function getTasks($page, $sort=0){
         if ($sort) {
-            $tasks = parent::getSomeRowsFromTableSort(config::$db['data_table'], config::$staf['tasks_count_on_page'], $sort);
-        } else {            
-            $tasks = parent::getSomeRowsFromTable(config::$db['data_table'], config::$staf['tasks_count_on_page']);
+            $offset = ($page-1) * config::$staf['tasks_count_on_page'];
+            $tasks = parent::getSomeRowsFromTableSort(config::$db['data_table'], config::$staf['tasks_count_on_page'], $sort, $offset);
+        } else {
+            $offset = ($page-1) * config::$staf['tasks_count_on_page'];
+            $tasks = parent::getSomeRowsFromTable(config::$db['data_table'], config::$staf['tasks_count_on_page'], $offset);
         }
 	    return $tasks;
     }

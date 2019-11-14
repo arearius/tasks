@@ -80,7 +80,7 @@
 	<div class="col-sm-8"></div>
     <div class="col-sm-1 m-3">
 		<?php if (Auth::getAuth()): ?>
-			<form action="http://31.184.254.242/tasks/?controller=AuthController&action=signUp" method="POST" role="form">
+			<form action="http://31.184.254.242/tasks/?controller=AuthController&action=signOut" method="POST" role="form">
 				<button type="submit" class="btn btn-primary">Выйти</button>
 			</form>			
 		<?php else: ?>

@@ -136,7 +136,12 @@
 		<nav aria-label="navigation">
 			<ul class="pagination">
 				<?php for ($i = 0; $i < $pages; ++$i): ?>
-					<li class="page-item"><a class="page-link" href=<?php echo '"http://31.184.254.242/tasks?page=' . ($i+1) . '"'; ?>><?php echo $i+1; ?></a></li>
+					<?php 
+						$url = '"http://31.184.254.242/tasks';
+						if ($_GET['sortBy']) $url .= "?sortBy=" . $_GET['sortBy'] . "&page=" .  ($i+1) . '"';
+						else $url .= "?page=" . ($i+1) . '"';
+					?>
+					<li class="page-item"><a class="page-link" href=<?php echo $url; ?>><?php echo $i+1; ?></a></li>
 				<?php endfor; ?>
 			</ul>
 		</nav>

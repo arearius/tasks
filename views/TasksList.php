@@ -38,7 +38,7 @@
 			</div>
       </div>
       <div class="modal-footer">
-		<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Войти</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Войти</button>
       </div>
 	  </form>
     </div>

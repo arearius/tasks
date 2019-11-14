@@ -28,7 +28,7 @@
 		<h4 class="modal-title">Введите логин и пароль</h4>	
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-	  <form class="m-3" action="/tasks/?action=signUp" method="POST" role="form">
+	  <form class="m-3" action="#" method="POST" role="form">
       <div class="modal-body">
 			<div class="form-group">
 				<input type="text" class="form-control" id="userLogin" name="user_name" placeholder="Введите ваше имя">

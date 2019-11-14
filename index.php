@@ -11,7 +11,7 @@ print_r($_POST);
 
 $action = $_GET['action'] ?? 'TasksList';
 switch ($_GET['controller']) {
-    case 'AuthController' : $controller = new AuthController(); echo 'auth';
+    case 'AuthController' : $controller = new AuthController(); echo 'auth'; break;
     default : $controller = new TasksController(); 
 }
 $controller->{$action}();

@@ -5,8 +5,8 @@ ini_set('log_errors', 1);
 session_start();
 include_once __DIR__ . '/autoload.php';
 
-print_($_GET);
-print_($_POST);
+print_r($_GET);
+print_r($_POST);
 
 
 $action = $_GET['action'] ?? 'TasksList';

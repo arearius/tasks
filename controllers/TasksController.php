@@ -20,8 +20,8 @@ class TasksController
         $tasks = $this->task->getTasks($page, $sort);
         $tasks_count = $this->task->getTasksCount();
         $data = [
-            'tasks' => $tasks;
-            'tasks_count' => $tasks_count;
+            'tasks' => $tasks,
+            'tasks_count' => $tasks_count
         ];
 	    $this->view->show('TasksList', $data);
     }
@@ -45,8 +45,8 @@ class TasksController
         $tasks = $this->task->getTasks($page, $sort);
         $tasks_count = $this->task->getTasksCount();
         $data = [
-            'tasks' => $tasks;
-            'tasks_count' => $tasks_count;
+            'tasks' => $tasks,
+            'tasks_count' => $tasks_count
         ];
 	    $this->view->show('TasksList', $data);
     }
@@ -68,8 +68,8 @@ class TasksController
             $tasks = $this->task->getTasks($page, $sort);
             $tasks_count = $this->task->getTasksCount();
             $data = [
-                'tasks' => $tasks;
-                'tasks_count' => $tasks_count;
+                'tasks' => $tasks,
+                'tasks_count' => $tasks_count
             ];
             $this->view->show('TasksList', $data);
         } else {

@@ -62,7 +62,6 @@ class Db
     protected static function getSomeRowsFromTable($table, $count, $offset)
     {
         $sql = "SELECT * FROM $table LIMIT $count OFFSET $offset";
-        echo $sql;
         $result = self::$connection->query($sql);
         $rows = [];
         while ($row = mysqli_fetch_row($result)){
@@ -74,7 +73,6 @@ class Db
     protected static function getSomeRowsFromTableSort($table, $count, $sort, $offset)
     {
         $sql = "SELECT * FROM $table ORDER BY $sort ASC LIMIT $count OFFSET $offset";
-        echo $sql;
         $result = self::$connection->query($sql);
         $rows = [];
         while ($row = mysqli_fetch_row($result)){

@@ -30,7 +30,14 @@
 		}
 		var xhr = new XMLHttpRequest();
   		xhr.open("POST", "/tasks?action=signUp");
-  		xhr.send(formData);
+		xhr.send(formData);
+		if (xhr.status != 200) {
+		// обработать ошибку
+			alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+		} else {
+		// вывести результат
+			alert( xhr.responseText ); // responseText -- текст ответа.
+		}
 	}
 </script>
 <div class="modal" id="myModal">

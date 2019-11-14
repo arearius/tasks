@@ -128,9 +128,9 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 </div>
-<?php if($tasks_count > config::$staf'tasks_count_on_page']): ?>
+<?php if($tasks_count > config::$staf['tasks_count_on_page']): ?>
 	<?php
-		$pages = intdiv($tasks_count, $config::$staf'tasks_count_on_page']) + intdiv(($tasks_count%$config::$staf'tasks_count_on_page'] + $config::$staf'tasks_count_on_page']),$config::$staf'tasks_count_on_page']);
+		$pages = intdiv($tasks_count, $config::$staf['tasks_count_on_page']) + intdiv(($tasks_count%$config::$staf['tasks_count_on_page'] + $config::$staf['tasks_count_on_page']),$config::$staf['tasks_count_on_page']);
 		echo 'pages = ' . $pages . PHP_EOL;
 		echo 'tasks count = ' . $tasks_count . PHP_EOL;
 	?>

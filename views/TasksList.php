@@ -28,6 +28,7 @@
 		for (var [key, value] of formData.entries()) { 
   			console.log(key, value);
 		}
+		formData.append('controller', 'AuthController');
 		var xhr = new XMLHttpRequest();
   		xhr.open("POST", "/tasks/?controller=AuthController&action=signUp");
 		xhr.send(formData);

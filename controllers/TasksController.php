@@ -17,7 +17,7 @@ class TasksController
     	else $page = 0;
         if (isset($_GET['sortBy'])) $sort=$_GET['sortBy'];
         $tasks = $this->task->getTasks($page, $sort);
-    $tasks_count = $this->task->getTasksCount();
+        $tasks_count = $this->task->getTasksCount();
 	    $this->view->show('TasksList');
     }
 

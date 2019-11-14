@@ -124,9 +124,7 @@ class Db
 
     protected static function getRowsCount($table){
         $sql = "SELECT COUNT(*) FROM `{$table}`";
-        $result = mysqli_fetch_row(self::$connection->query($sql));
-        echo 'count = ' . $result;
-        print_r($result);
+        $result = mysqli_fetch_row(self::$connection->query($sql))[0];
         return $result;
     }
 

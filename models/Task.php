@@ -32,10 +32,11 @@ class Task extends Db
     }
 
     public function getTasks($page, $sort=0){
+        if ($page == 0) $page++;
         if ($sort) {
             $offset = ($page-1) * config::$staf['tasks_count_on_page'];
             $tasks = parent::getSomeRowsFromTableSort(config::$db['data_table'], config::$staf['tasks_count_on_page'], $sort, $offset);
-        } else {
+        } else {            
             $offset = ($page-1) * config::$staf['tasks_count_on_page'];
             $tasks = parent::getSomeRowsFromTable(config::$db['data_table'], config::$staf['tasks_count_on_page'], $offset);
         }

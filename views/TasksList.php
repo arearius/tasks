@@ -31,6 +31,7 @@
 		var xhr = new XMLHttpRequest();
   		xhr.open("POST", "/?controller=AuthController&action=signUp");
 		xhr.send(formData);
+		console.log(xhr);
 		if (xhr.status != 200) {
 			alert('Ошибка при обращении к сайту');
 		} else {

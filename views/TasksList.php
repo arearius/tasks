@@ -128,6 +128,15 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 </div>
+<nav aria-label="navigation">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Вперед</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Назад</a></li>
+  </ul>
+</nav>
 <form class="m-3" action="/tasks/?action=addTask" method="POST" role="form">
     <div class="form-group">
         <input type="text" class="form-control" id="inputNickname" name="user_name" placeholder="Введите ваше имя">

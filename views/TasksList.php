@@ -131,8 +131,6 @@
 <?php if($data['tasks_count'] > config::$staf['tasks_count_on_page']): ?>
 	<?php
 		$pages = intdiv($data['tasks_count'], config::$staf['tasks_count_on_page']) + intdiv(($data['tasks_count']%config::$staf['tasks_count_on_page'] + config::$staf['tasks_count_on_page']),config::$staf['tasks_count_on_page']);
-		echo 'pages = ' . $pages . PHP_EOL;
-		echo 'tasks count = ' . $data['tasks_count'] . PHP_EOL;
 	?>
 	<div class="col-sm-10 pb-3">
 		<nav aria-label="navigation">

@@ -38,6 +38,6 @@ class Config
     ];
 
     public static $staf = [
-		'tasks_count_on_page' => 3
+		'tasks_count_on_page' => '3'
 	];
 }

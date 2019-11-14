@@ -6,9 +6,11 @@ class AuthController
 
     public function signUp(){
         if (Auth::signUp()){
-            return 'ok';
+            echo 'ok';
+            return true;
         } else {
-            return 'Wrong password';
+            echo 'Wrong password';
+            return false;
         }
     }
 

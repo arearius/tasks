@@ -7,5 +7,5 @@ include_once __DIR__ . '/autoload.php';
 
 $action = $_GET['action'] ?? 'TasksList';
 $controller = $_GET['controller'] ?? 'TaskController';
-$controller = new {$controller}}();
-$controller->{$action}();
+//$controller = new {$controller}}();
+//$controller->{$action}();

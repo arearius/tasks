@@ -126,7 +126,7 @@ class Db
         $sql = "SELECT COUNT(*) FROM `{$table}`";
         $result = mysqli_fetch_row(self::$connection->query($sql));
         echo 'count = ' . $result;
-        echo $result;
+        print_r($result);
         return $result;
     }
 
